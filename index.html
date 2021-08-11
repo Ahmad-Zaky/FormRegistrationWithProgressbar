@@ -21,8 +21,17 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class="title">Registr your account</div>
+    <div class="container" style="position: relative !important;">
+      
+      
+      <div class="button" style="margin-top: 10px; float: right;">
+        <button class="btn btn-primary button" type="button"data-toggle="modal" data-target="#colorThemeModal">
+          Color Themes
+        </button>
+      </div>
+      
+      <div class="title" style="width: 300px;">Registr your account</div>
+
       <div class="content">
         <form method="POST" action="#" onsubmit="onSubmit()">
           <div class="user-details">
@@ -137,6 +146,40 @@
             <input id="submit" type="submit" value="Create Account" />
           </div>
         </form>
+      </div>
+    </div>
+
+    <!-- Color Themes Modal -->
+    <div class="modal fade" id="colorThemeModal" tabindex="-1" role="dialog" aria-labelledby="colorThemeModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="colorThemeModalLabel">Color Themes</h5>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li class="gradient--2">
+                <div class="gradient"></div>
+              </li>
+              <li class="gradient--4">
+                <div class="gradient"></div>
+              </li>
+              <li class="gradient--7">
+                <div class="gradient"></div>
+              </li>
+              <li class="gradient--13">
+                <div class="gradient"></div>
+              </li>
+              <li class="gradient--14">
+                <div class="gradient"></div>
+              </li>
+              <li class="gradient--15">
+                <div class="gradient"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </body>

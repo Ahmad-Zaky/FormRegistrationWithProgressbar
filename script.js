@@ -1,13 +1,71 @@
-// Code By Webdevtrick ( https://webdevtrick.com ) 
 $(document).ready(function() {
 
-    
+    // Themes Color
+    $('.gradient').on('click', e => {themesColorHandler(e)})
+    function themesColorHandler(e) {
+        
+        const themes = getThemes()
+
+        const brightThemes = ["gradient--2", "gradient--4", "gradient--7", "gradient--13"]
+        const darkThemes = ["gradient--14", "gradient--15"]
+        const className = e.target.parentNode.className
+        
+        
+        // Normal Coloring
+        document.documentElement.style.setProperty('--start-color', themes[e.target.parentNode.className].start)
+        document.documentElement.style.setProperty('--end-color', themes[e.target.parentNode.className].end)
+        
+        // Disabled Hover Coloring
+        document.documentElement.style.setProperty('--start-color-fadded', themes[e.target.parentNode.className].start)
+        document.documentElement.style.setProperty('--end-color-fadded', themes[e.target.parentNode.className].end)
+        
+        // Disabled Coloring
+        document.documentElement.style.setProperty('--color-disabled', themes[e.target.parentNode.className].start)
+        
+        // Adjusting Font Colors
+        if (brightThemes.indexOf(className) != -1) {
+            document.documentElement.style.setProperty('--color-font', '#000')
+        } 
+        
+        if (darkThemes.indexOf(className) != -1) {
+            document.documentElement.style.setProperty('--color-font', '#fff')
+        }
+
+    }
+
+    function getThemes() {
+        
+        return  {
+            "gradient--2": {
+                'start': "#99E5A2",
+                 'end': "#D4FC78"
+            },
+            "gradient--4": {
+                'start': "#6CACFF",
+                 'end': "#8DEBFF"
+            },
+            "gradient--7": {
+                'start': "#D279EE",
+                 'end': "#F8C390"
+            },
+            "gradient--13": {
+                'start': "#F0EFF0",
+                'end': "#FAF8F9"
+            },
+            "gradient--14": {
+                'start': "#121317",
+                 'end': "#323B42"
+            },
+            "gradient--15": {
+                'start': "#f11212",
+                 'end': "#e68271"
+            }
+        }
+    }
+
+    // By Defualt Disable Submit (Create Account) Button 
     var sumbitBtn = document.getElementById('submit')
     sumbitBtn.disabled = true
-    
-    // Progress bar speed    
-    var secondFraction = '0.3'
-    $('#password-strength').css('transition', 'width '+secondFraction+'s ease');
     
     // Validate Upper Fields (Name, Username, Email)
     document.getElementsByName("name")[0].onkeyup = e => {checkRequiredField(e, 'name')}
@@ -36,6 +94,7 @@ $(document).ready(function() {
         validateAll()
     }
 
+    // Validate Email Input
     function validateEmail(e) {
         
         let email = e.target.value
@@ -221,9 +280,15 @@ $(document).ready(function() {
         }
     }
 
+
+    // Check if all Inputs Validation are filled
     function validateAll() {
         sumbitBtn.disabled = true
         if (!document.getElementsByClassName("fa-times").length) sumbitBtn.disabled = false
     }
+
+    // Configure Progress bar speed    
+    var secondFraction = '0.3'
+    $('#password-strength').css('transition', 'width '+secondFraction+'s ease');
 
 });
