@@ -6,6 +6,30 @@ Form Registration (HTML &amp; CSS &amp; JS &amp; Bootstrap)
   <img src="register.png" width="400" />
 </p>
 
+<p align="center">
+  <img src="./screenshots/themes.png" width="400" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/blue-1.png" width="400" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/green-2.png" width="400" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/pink.png" width="400" />
+</p>
+
+<p align="center">
+  <img src="./screenshots/white.png" width="400" />
+</p>
+
+<p align="center">
+  <strong>And more ...</strong>
+</p>
+
 ### Has the Following Features:
 
 * Reactive Input Validation
